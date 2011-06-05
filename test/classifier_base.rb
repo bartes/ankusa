@@ -1,17 +1,17 @@
-require File.join File.dirname(__FILE__), 'helper'
+require File.expand_path('helper', File.dirname(__FILE__))
 
 module ClassifierBase
   def train
     @classifier.train :spam, "spam and great spam"   # spam:2 great:1
     @classifier.train :good, "words for processing" # word:1 process:1
-    @classifier.train :good, "good word"            # word:1 good:1      
+    @classifier.train :good, "good word"            # word:1 good:1
   end
 
   def test_train
     counts = @storage.get_word_counts(:spam)
     assert_equal counts[:spam], 2
     counts = @storage.get_word_counts(:word)
-    assert_equal counts[:good], 2 
+    assert_equal counts[:good], 2
     assert_equal @storage.get_total_word_count(:good), 4
     assert_equal @storage.get_doc_count(:good), 2
     assert_equal @storage.get_total_word_count(:spam), 3
@@ -64,7 +64,7 @@ module NBClassifierBase
     @classifier.train :somethingelse, "this is something else entirely spam"
     cs = @classifier.classifications("spam is tastey", [:spam, :good])
     assert_equal cs[:spam], spam
-    assert_equal cs[:good], good    
+    assert_equal cs[:good], good
 
     # test for class we didn't train on
     cs = @classifier.classifications("spam is super tastey if you are a zombie", [:spam, :nothing])

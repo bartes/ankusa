@@ -1,4 +1,4 @@
-require 'ankusa/memory_storage'
+require File.expand_path('memory_storage', File.dirname(__FILE__))
 
 module Ankusa
 
@@ -16,7 +16,7 @@ module Ankusa
       @klass_word_counts = {}
       @klass_doc_counts = {}
     end
-    
+
     def drop_tables
       File.delete(@file) rescue Errno::ENOENT
       reset

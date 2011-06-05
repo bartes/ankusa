@@ -1,5 +1,5 @@
-require File.join File.dirname(__FILE__), 'classifier_base'
-require 'ankusa/cassandra_storage'
+require File.expand_path('classifier_base', File.dirname(__FILE__))
+require 'ankusa/storage/cassandra_storage'
 
 module CassandraClassifierBase
   def initialize(name)

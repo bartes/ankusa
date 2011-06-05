@@ -1,5 +1,5 @@
-require File.join File.dirname(__FILE__), 'classifier_base'
-require 'ankusa/file_system_storage'
+require File.expand_path('classifier_base', File.dirname(__FILE__))
+require 'ankusa/storage/file_system_storage'
 
 module FileSystemClassifierBase
   def initialize(name)

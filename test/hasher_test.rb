@@ -1,4 +1,4 @@
-require File.join File.dirname(__FILE__), 'helper'
+require File.expand_path('helper', File.dirname(__FILE__))
 
 class HasherTest < Test::Unit::TestCase
   def test_stemming

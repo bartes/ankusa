@@ -1,6 +1,7 @@
 require 'fast_stemmer'
-require 'ankusa/stopwords'
-require 'ankusa/emots'
+require File.expand_path('stopwords', File.dirname(__FILE__))
+require File.expand_path('emots', File.dirname(__FILE__))
+
 
 module Ankusa
 
