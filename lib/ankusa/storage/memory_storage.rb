@@ -12,7 +12,7 @@ module Ankusa
     def reset
       init_tables
     end
-    
+
     def drop_tables
     end
 
@@ -39,7 +39,7 @@ module Ankusa
     def get_total_word_count(klass)
       @total_word_counts[klass]
     end
-    
+
     def get_doc_count(klass)
       @total_doc_counts[klass]
     end

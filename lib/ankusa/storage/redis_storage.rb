@@ -22,7 +22,6 @@ module Ankusa
     end
 
     def close
-      redis.shutdown
     end
 
     def init_tables
@@ -69,21 +68,5 @@ module Ankusa
     end
   end
 
-#  module RedisStoragePipelined
-    #def train(klass, text)
-      #@storage.redis.pipelined do
-        #super(klass, text)
-      #end
-    #end
-
-    #def untrain(klass, text)
-      #@storage.redis.pipelined do
-        #super(klass, text)
-      #end
-    #end
-  #end
-
-  #KLDivergenceClassifier.send(:include, RedisStoragePipelined)
-  #NaiveBayesClassifier.send(:include, RedisStoragePipelined)
 end
 
