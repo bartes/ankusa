@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/bartes/ankusa"
   s.require_paths = ["lib"]
   s.add_dependency('fast-stemmer', '>= 1.0.0')
-  s.requirements << "Either hbaserb >= 0.0.3 or cassandra >= 0.7"
+  s.requirements << "Either hbaserb >= 0.0.3 or cassandra >= 0.7 or redis"
   s.rubyforge_project = "ankusa"
 end
